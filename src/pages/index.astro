@@ -25,16 +25,22 @@ import "../styles/global.css";
 		<script>
 			if (typeof window !== "undefined") {
 				window.addEventListener("DOMContentLoaded", () => {
-					const titleEl = document.querySelector(".heart-title");
-					const titleText = document.querySelector(".heart-text");
-					const yesBtn = document.querySelector(".btn.yes");
-					const noBtn = document.querySelector(".btn.no");
-					const choices = document.querySelector(".choice-buttons");
-					const sound = document.querySelector("#valentine-sound");
+					const titleEl =
+						document.querySelector<HTMLHeadingElement>(".heart-title");
+					const titleText =
+						document.querySelector<HTMLSpanElement>(".heart-text");
+					const yesBtn =
+						document.querySelector<HTMLButtonElement>(".btn.yes");
+					const noBtn =
+						document.querySelector<HTMLButtonElement>(".btn.no");
+					const choices =
+						document.querySelector<HTMLDivElement>(".choice-buttons");
+					const sound =
+						document.querySelector<HTMLAudioElement>("#valentine-sound");
 
 					if (!titleEl || !titleText || !yesBtn || !noBtn || !choices) return;
 
-					let resetTimeout;
+					let resetTimeout: number | undefined;
 
 					const moveButton = () => {
 						const offsetX = (Math.random() - 0.5) * 400;
@@ -89,4 +95,3 @@ import "../styles/global.css";
 		</script>
 	</body>
 </html>
-
